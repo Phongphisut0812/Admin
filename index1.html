@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance</title>
+
+    <!--meta, link css,font-->
+    <link rel="stylesheet" href="css/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+<body class="hold-transition sidebar-mini layout-navbar-fixed">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+
+            <!-- SEARCH FORM -->
+            <form class="form-inline ml-auto">
+                <div class="input-group input-group-sm">
+                    <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-navbar" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-bell"></i>
+                        <span class="badge badge-warning navbar-badge">15</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <span class="dropdown-header">15 Notifications</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-envelope mr-2"></i> 4 new messages
+                            <span class="float-right text-muted text-sm">3 mins</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i> 8 friend requests
+                            <span class="float-right text-muted text-sm">12 hours</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i> 3 new reports
+                            <span class="float-right text-muted text-sm">2 days</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Sidebar Container  ด้านซ้าย-->
+        <!-- Brand Logo -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <a href="#" class="brand-link">
+                <img src="css/h4.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
+                <span class="brand-text font-weight-light">Admin Khun</span>
+            </a>
+            <div class="sidebar">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="css/hi1.jpeg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Phongphisut Phaka</a>
+                    </div>
+                </div>
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <li class="nav-item">
+                            <a href="form.html" class="nav-link">
+                                <i class="nav-icon fas fa-address-card"></i>
+                                <p> Information</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index1.html" class="nav-link">
+                                <i class="nav-icon fas fa-piggy-bank"></i>
+                                <p>Finance</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index2.html" class="nav-link">
+                                <i class="nav-icon fas fa-sitemap"></i>
+                                <p>Organization</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content Wrapper. Contains page content  เนื้อหา -->
+        <!-- Content Header (Page header) ส่วนหัว GPA-->
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark">Finance</h1>
+                        </div>
+                    </div>
+
+                    <!--Area Chart การเงินต่อเดือน-->
+                    <div class="col-lg-12">
+                        <div class="card mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+
+                                <h5 class="card-title">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                    รายได้ต่อเดือน
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-area"></div>
+                                <canvas id="myAreaChart"></canvas>
+                            </div>
+                            <h6> &nbsp;&nbsp;&nbsp;รายการเงินเข้าต่อเดือน</h6>
+                        </div>
+                    </div>
+
+                    <!-- Bar chart รายจ่ายต่ออาทิตย์-->
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-hand-holding-usd"></i>
+                                รายจ่ายต่ออาทิตย์
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="bar-chart" style="height: 300px;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <strong> &copy; 2014-2019 Admin Khun</strong> 
+          </footer>      
+    </div>
+</body>
+<!--script-->
+<script src="js/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="js/adminlte.js"></script>
+<script src="chart.js/Chart.min.js"></script>
+<script src="js/jquery.knob.min.js"></script>
+<script src="js/dashboard2.js"></script>
+<!--Area Chart การเงินต่อเดือน-->
+<script src="js/chart-area-demo.js"></script>
+<script src="js/jquery.flot.js"></script>
+
+<script>
+    var bar_data = {
+        data: [[1, 110], [2, 200], [3, 130], [4, 190], [5, 220], [6, 0], [7, 0]],
+        bars: { show: true }
+    }
+    $.plot('#bar-chart', [bar_data], {
+        grid: {
+            borderWidth: 1,
+            borderColor: '#f3f3f3',
+            tickColor: '#f3f3f3'
+        },
+        series: {
+            bars: {
+                show: true, barWidth: 0.5, align: 'center',
+            },
+        },
+        colors: ['#3c8dbc'],
+        xaxis: {
+            ticks: [[1, 'Sunday'], [2, 'Monday'], [3, 'Tuesday'], [4, 'Wednesday'], [5, 'Thursday'], [6, 'Friday'], [7, 'Saturday']]
+        }
+    })
+</script>
+</html>
